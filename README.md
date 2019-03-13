@@ -8,7 +8,7 @@ Beware that this method could save your history in a terminal / command line, an
 
 e.g.
 
-java -jar PwnedPasswordChecker.jar password12345
+`java -jar PwnedPasswordChecker.jar password12345`
 
 Usage #2:
 
@@ -17,4 +17,4 @@ This is the more secure method, as it accepts a user input from within the progr
 
 e.g.
 
-java -jar PwnedPasswordChecker.jar
+`java -jar PwnedPasswordChecker.jar`
