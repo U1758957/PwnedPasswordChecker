@@ -6,6 +6,9 @@ import errors.MainError;
 import errors.NetworkError;
 import network.HTTPSRequest;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.Map;
 
 public class Main {
@@ -23,10 +26,18 @@ public class Main {
 
         String password;
 
-        if (args.length == 1) password = args[0];
-        else throw new MainError(args.length < 1 ?
-                "MainError: No Arguments Specified" :
-                "MainError: Too Many Arguments");
+        if (args.length == 1) {
+            System.out.println("Beware! Command line history can be visible to other users of your system!");
+            password = args[0];
+        } else {
+            System.out.println("Password:");
+            BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+            try {
+                password = reader.readLine();
+            } catch (IOException e) {
+                throw new MainError("MainError: " + e.getMessage());
+            }
+        }
 
         Hash hash = new Hash(password);
         hash.runHash();
