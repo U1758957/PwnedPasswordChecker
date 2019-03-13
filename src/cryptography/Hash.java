@@ -33,7 +33,7 @@ public class Hash {
         MessageDigest digest = MessageDigest.getInstance("SHA-1");
         byte[] bytes = digest.digest(stringToHash.getBytes(StandardCharsets.UTF_8));
 
-        for (byte x : bytes) hashHex.append(Integer.toHexString(0xFF & x));
+        for (byte x : bytes) hashHex.append(String.format("%1$02X", x));
 
         setHash(hashHex.toString());
 
@@ -48,12 +48,12 @@ public class Hash {
     }
 
     /**
-     * Get the full hash
+     * Get the hash from the 5th character onwards
      *
      * @return the hash
      */
     public String getHash() {
-        return hash;
+        return hash.substring(5);
     }
 
     /**
