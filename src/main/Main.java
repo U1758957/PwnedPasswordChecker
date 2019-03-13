@@ -10,6 +10,15 @@ import java.util.Map;
 
 public class Main {
 
+    /**
+     * The main method, checks args, generates a hash, connects to the website, and checks if your password exists via
+     * hash form
+     *
+     * @param args the password to check
+     * @throws MainError    if no args specified, or too many args specified
+     * @throws HashError    if the Hash class throws an error
+     * @throws NetworkError if the HTTPSRequest class throws an error
+     */
     public static void main(String[] args) throws MainError, HashError, NetworkError {
 
         String password;
