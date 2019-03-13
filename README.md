@@ -13,7 +13,7 @@ e.g.
 Usage #2:
 
 In a command line / powershell, just type (without quotations or square brackets): "java -jar PwnedPasswordChecker.jar"
-This is the more secure method, as it accepts a user input from within the program instead of a command line, and as such no history is saved anywhere/
+This is the more secure method, as it accepts a user input from within the program instead of a command line, and as such no history is saved anywhere.
 
 e.g.
 
